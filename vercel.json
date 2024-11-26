@@ -1,3 +1,9 @@
 {
-    "rootDirectory": "my-app"
+    "builds": [
+      {
+        "src": "my-app/index.js",  
+        "use": "@vercel/node"
+      }
+    ]
   }
+  
