@@ -15,7 +15,7 @@ function NavBar() {
         {!token && (
           <Box>
             <button onClick={() => navigate("/login")} className="">
-              注册
+              ເຂົ້າສູ່ລະບົບ
             </button>
           </Box>
         )}
@@ -25,7 +25,7 @@ function NavBar() {
               onClick={() => navigate("/resgister")}
               className="btn btn-primary"
             >
-              登记
+              ລົງທະບຽນ
             </button>
           </Box>
         )}

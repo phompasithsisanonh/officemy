@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -12,34 +12,34 @@ function Resgister() {
   const handleAdmin = async () => {
     try {
       await axios
-        .post("http://localhost:8000/api/register", {
+        .post(`${process.env.REACT_API}/register`, {
           password,
-          tel
+          tel,
         })
         .then((res) => {
           Swal.fire({
             title: "登录成功",
             text: res.data.message,
             icon: "success",
-            confirmButtonText: "ປິດ",
+            confirmButtonText: "关",
           });
           navigate("/add");
-        }).catch((err)=>{
+        })
+        .catch((err) => {
           Swal.fire({
             title: "无措",
-            text: err.response.data.message,
+            text: err?.response?.data?.message,
             icon: "error",
-            confirmButtonText: "ປິດ",
+            confirmButtonText: "关",
           });
         });
     } catch (error) {
       Swal.fire({
         title: "error!",
-        text: error.err.response.data.message,
+        text: error?.err?.response?.data.message,
         icon: "error",
         confirmButtonText: "ປິດ",
       });
-  
     }
   };
   return (
@@ -69,7 +69,7 @@ function Resgister() {
                   paddingLeft: "20px",
                 }}
                 value={tel}
-                onChange={(e)=>setTel(e.target.value)}
+                onChange={(e) => setTel(e.target.value)}
                 type="text"
                 className="Input_order1"
                 placeholder="手机号码"
@@ -85,14 +85,16 @@ function Resgister() {
                   paddingLeft: "20px",
                 }}
                 value={password}
-                onChange={(e)=>setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
                 type="text"
                 className="Input_order1"
                 placeholder="密码"
               />
             </Stack>
             <Box display={"flex"} justifyContent={"center"}>
-              <button onClick={handleAdmin} className="btnOrder">登录</button>
+              <button onClick={handleAdmin} className="btnOrder">
+                登录
+              </button>
             </Box>
           </Stack>
         </Stack>

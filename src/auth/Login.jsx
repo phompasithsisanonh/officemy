@@ -12,7 +12,7 @@ function Login() {
     try {
      
       await axios.post(
-        "http://localhost:8000/api/login",
+        `${process.env.REACT_API}/login`,
         {
           tel,
           password
@@ -24,23 +24,23 @@ function Login() {
           title: "注册成功",
           text:  res.data.message,
           icon: "scuccess",
-          confirmButtonText: "ປິດ",
+          confirmButtonText: "关",
         });
         navigate("/add");
       }).catch((err)=>{
         console.log(err)
         Swal.fire({
           title: "无措",
-          text:  err.response.data.message,
+          text:  err?.response?.data?.message,
           icon: "error",
-          confirmButtonText: "ປິດ",
+          confirmButtonText: "关",
         });
       });
      
     } catch (error) {
       Swal.fire({
         title: "无措",
-        text: error.err.response.data.message,
+        text: error?.err?.response?.data?.message,
         icon: "error",
         confirmButtonText: "ປິດ",
       });
