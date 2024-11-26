@@ -12,7 +12,7 @@ function Login() {
     try {
      
       await axios.post(
-        `${process.env.REACT_API}/api/login`,
+        `https://office-five-psi.vercel.app/api/login`,
         {
           tel,
           password

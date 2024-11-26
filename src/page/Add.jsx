@@ -35,7 +35,7 @@ function Add() {
 
       await axios
         .post(
-          `${process.env.REACT_API}/api/checkcode `,
+          `https://office-five-psi.vercel.app/api/checkcode `,
           {
             date,
             list,
