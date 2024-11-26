@@ -12,7 +12,7 @@ function Login() {
     try {
      
       await axios.post(
-        `${process.env.REACT_API}/login`,
+        `${process.env.REACT_API}/api/login`,
         {
           tel,
           password

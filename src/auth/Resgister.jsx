@@ -12,7 +12,7 @@ function Resgister() {
   const handleAdmin = async () => {
     try {
       await axios
-        .post(`${process.env.REACT_API}/register`, {
+        .post(`${process.env.REACT_API}/api/register`, {
           password,
           tel,
         })

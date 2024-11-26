@@ -35,7 +35,7 @@ function Add() {
 
       await axios
         .post(
-          `${process.env.REACT_API}/checkcode `,
+          `${process.env.REACT_API}/api/checkcode `,
           {
             date,
             list,

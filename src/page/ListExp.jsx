@@ -81,7 +81,7 @@ function ListExp() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${process.env.REACT_API}/listAll?page=${page}&limit=${limit}&categoryExpence=${categoryExpence}&country=${country}&year=${year}&month=${month}`
+        `${process.env.REACT_API}/api/listAll?page=${page}&limit=${limit}&categoryExpence=${categoryExpence}&country=${country}&year=${year}&month=${month}`
       );
       setCreateData(response.data.products);
       setTotal(response.data.total);
