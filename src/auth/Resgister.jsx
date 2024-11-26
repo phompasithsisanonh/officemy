@@ -12,7 +12,7 @@ function Resgister() {
   const handleAdmin = async () => {
     try {
       await axios
-        .post(`https://office-five-psi.vercel.app/api/register`, {
+        .post(`${process.env.REACT_API}/api/register`, {
           password,
           tel,
         })
