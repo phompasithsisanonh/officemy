@@ -8,7 +8,6 @@ function Add() {
   const [isSmallerThan600] = useMediaQuery("(max-width: 600px)");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const decoded = localStorage.getItem("token");
   const [date, setDate] = useState("");
   const [list, setList] = useState("");
   const [balance, setBalance] = useState("");
