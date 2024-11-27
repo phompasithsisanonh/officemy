@@ -16,6 +16,10 @@ function Login() {
         {
           tel,
           password
+        },{
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       ).then((res)=>{
         const token = res.data.token;

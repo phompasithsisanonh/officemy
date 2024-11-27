@@ -47,6 +47,11 @@ function Add() {
             country,
             note
           },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
         )
         .then((res) => {
           console.log(res);

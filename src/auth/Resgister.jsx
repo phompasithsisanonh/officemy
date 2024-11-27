@@ -15,6 +15,10 @@ function Resgister() {
         .post(`https://office-five-psi.vercel.app/api/register`, {
           password,
           tel,
+        },{
+          headers: {
+            "Content-Type": "application/json",
+          },
         })
         .then((res) => {
           Swal.fire({

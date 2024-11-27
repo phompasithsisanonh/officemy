@@ -82,7 +82,13 @@ function ListExp() {
     try {
       const response = await axios.get(
         `https://office-five-psi.vercel.app/api/listAll?page=${page}&limit=${limit}&categoryExpence=${categoryExpence}&country=${country}&year=${year}&month=${month}`
-      );
+      ,
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+    );
       setCreateData(response.data.products);
       setTotal(response.data.total);
     } catch (error) {
